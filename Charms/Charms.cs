@@ -1,4 +1,4 @@
-using Modding;
+﻿using Modding;
 using Satchel;
 using SFCore;
 using System.Collections.Generic;
@@ -8,45 +8,37 @@ namespace BeyondHallownest
 {
     public class AntBlade : EasyCharm
     {
-        protected override int get_charm_cost() => 2;
-        protected override string GetDescription() => "Makes your nail do something... maybe";
         protected override string GetName() => "Ant Blade";
-        protected override Sprite GetSpriteInternal()=> AssemblyUtils.GetSpriteFromResources("assets/AntBlade.png");
+        protected override string GetDescription() => "Makes your nail do something... maybe";
+        protected override int GetCharmCost() => 2;
+        protected override Sprite GetSpriteInternal()=> AssemblyUtils.GetSpriteFromResources("AntBlade.png");
     }
-    public class settings {
-        public Dictionary<string,EasyCharmState> Charms; 
-    }
-    public class EasyCharmTest : Mod, ILocalSettings<settings>
+    public class ShinyRock : EasyCharm
     {
-        internal static EasyCharmTest Instance;
-        internal settings localSettings = new settings();
-        internal Dictionary<string, EasyCharm> Charms = new Dictionary<string, EasyCharm>{ 
-            {"AntBlade",new AntBlade()},
-        };
-        public override void Initialize(Dictionary<string, Dictionary<string, GameObject>> preloadedObjects)
-        {
-            Log("Initializing");
-            Instance = this;
-            Log("Initialized");
-            On.HeroController.Update += HeroController_Update;
-        }
-        private void HeroController_Update(On.HeroController.orig_Update orig, HeroController self)
-        {
-            orig(self);
-            if(Charms["AntBlade"].GotCharm && Charms["AntBlade"].IsEquipped)
-            {
-                Log("Dandy");
-            }
-            if (Input.GetKeyDown(KeyCode.P))
-            {
-                Log("Giving AntBlade");
-                Charms["AntBlade"].GiveCharm(true);
-            }
-            if (Input.GetKeyDown(KeyCode.L))
-            {
-                Log("Taking AntBlade");
-                Charms["AntBlade"].TakeCharm();
-            }
-        }
+        protected override string GetName() => "Shiny Rock";
+        protected override string GetDescription() => "Makes your nail do something... maybe";
+        protected override int GetCharmCost() => 1;
+        protected override Sprite GetSpriteInternal()=> AssemblyUtils.GetSpriteFromResources("ShinyRock.png");
+    }
+    public class SandwormMandibule : EasyCharm
+    {
+        protected override string GetName() => "Sandworm Mandibule";
+        protected override string GetDescription() => "Makes your nail do something... maybe";
+        protected override int GetCharmCost() => 2;
+        protected override Sprite GetSpriteInternal()=> AssemblyUtils.GetSpriteFromResources("SandwormMandibule.png");
+    }
+    public class SharkTooth : EasyCharm
+    {
+        protected override string GetName() => "Shark Tooth";
+        protected override string GetDescription() => "Makes your nail do something... maybe";
+        protected override int GetCharmCost() => 2;
+        protected override Sprite GetSpriteInternal()=> AssemblyUtils.GetSpriteFromResources("SharkTooth.png");
+    }
+    public class RadiantMask : EasyCharm
+    {
+        protected override string GetName() => "Radiant Mask";
+        protected override string GetDescription() => "Makes your nail do something... maybe";
+        protected override int GetCharmCost() => 12;
+        protected override Sprite GetSpriteInternal()=> AssemblyUtils.GetSpriteFromResources("RadiantMask.png");
     }
 }

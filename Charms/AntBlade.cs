@@ -9,34 +9,32 @@ namespace BeyondHallownest
     public class AntBlade : EasyCharm
     {
         protected override string GetName() => "Ant Blade";
-        protected override string GetDescription() => "
-        An amalgam of metal and unidentifyable body parts.\n\n
-        Makes your parries stagger, and makes you deal increased damaged to staggered enemies.";
+        protected override string GetDescription() => "An amalgam of metal and unidentifyable body parts.\n\nMakes your parries stagger, and makes you deal increased damaged to staggered enemies.";
         protected override int GetCharmCost() => 2;
-        protected override Sprite GetSpriteInternal()=> AssemblyUtils.GetSpriteFromResources("AntBlade.png");
-    }
+        protected override Sprite GetSpriteInternal()=> AssemblyUtils.GetSpriteFromResources("assets/AntBlade.png");
 
-    public override void Hook()
-    {
-        ModHooks.GetPlayerIntHook += BuffNail;
-        ModHooks.SetPlayerBoolHook += UpdateNailDamageOnEquip;
-    }
-
-    private int BuffNail(string intName, int damage)
-    {
-        if (intName == "nailDamage" && Equipped())
+        public void Hook()
         {
-            damage = 56;
+            ModHooks.GetPlayerIntHook += BuffNail;
+            ModHooks.SetPlayerBoolHook += UpdateNailDamageOnEquip;
         }
-        return damage;
-    }
 
-    private bool UpdateNailDamageOnEquip(string boolName, bool value)
-    {
-        if (boolName == $"equippedCharm_{Num}")
+        private int BuffNail(string intName, int damage)
         {
-            BeyondHallownest.UpdateNailDamage();
+            if (intName == "nailDamage" && IsEquipped)
+            {
+                damage *= 100;
+            }
+            return damage;
         }
-        return value;
+
+        private bool UpdateNailDamageOnEquip(string boolName, bool value)
+        {
+            if (IsEquipped)
+            {
+                BeyondHallownest.UpdateNailDamage();
+            }
+            return value;
+        }
     }
 }

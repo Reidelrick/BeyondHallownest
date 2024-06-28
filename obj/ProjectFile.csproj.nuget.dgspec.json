@@ -1,0 +1,53 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/alexis/Downloads/__DEV/__MODS/BeyondHallownest/ProjectFile.csproj": {}
+  },
+  "projects": {
+    "/home/alexis/Downloads/__DEV/__MODS/BeyondHallownest/ProjectFile.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/alexis/Downloads/__DEV/__MODS/BeyondHallownest/ProjectFile.csproj",
+        "projectName": "BeyondHallownest",
+        "projectPath": "/home/alexis/Downloads/__DEV/__MODS/BeyondHallownest/ProjectFile.csproj",
+        "packagesPath": "/home/alexis/.nuget/packages/",
+        "outputPath": "/home/alexis/Downloads/__DEV/__MODS/BeyondHallownest/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/alexis/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "targetAlias": "net472",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "targetAlias": "net472",
+          "dependencies": {
+            "Microsoft.NETFramework.ReferenceAssemblies": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.105/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

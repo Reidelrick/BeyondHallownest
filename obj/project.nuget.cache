@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "kcRu1MpedmvX1e2astKrjhqa5iovCgHpBNhwiwBB4DWr7McLxfKBK1kYPi9Vrq5jNQKTqzMqOTu+psp3Zdqwfg==",
+  "success": true,
+  "projectFilePath": "/home/alexis/Downloads/__DEV/__MODS/BeyondHallownest/ProjectFile.csproj",
+  "expectedPackageFiles": [
+    "/home/alexis/.nuget/packages/microsoft.netframework.referenceassemblies/1.0.3/microsoft.netframework.referenceassemblies.1.0.3.nupkg.sha512",
+    "/home/alexis/.nuget/packages/microsoft.netframework.referenceassemblies.net472/1.0.3/microsoft.netframework.referenceassemblies.net472.1.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

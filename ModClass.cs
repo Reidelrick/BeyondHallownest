@@ -47,5 +47,14 @@ namespace BeyondHallownest
                 Charms["RadiantMask"].GiveCharm(true);
             }
         }
+        internal static void UpdateNailDamage()
+        {
+            static IEnumerator WaitThenUpdate()
+            {
+                yield return null;
+                PlayMakerFSM.BroadcastEvent("UPDATE NAIL DAMAGE");
+            }
+            GameManager.instance.StartCoroutine(WaitThenUpdate());
+        }
     }
 }
